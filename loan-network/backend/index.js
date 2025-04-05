@@ -3,34 +3,66 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const app = express();
 
+// Step-by-step debug logs
+console.log("🔧 Starting server...");
+
 // Load environment variables
 dotenv.config();
+console.log("✅ .env loaded");
 
-// Middlewares
+// Middleware
 app.use(cors());
 app.use(express.json());
+console.log("✅ Middleware configured");
 
-// Route imports
-const userRoutes = require('./routes/userRoutes');
-const loanRoutes = require('./routes/loanRoutes');
-const trustRoutes = require('./routes/trustRoutes');
-const blockchainRoutes = require('./routes/blockchainRoutes');
-const whatsappRoutes = require('./routes/whatsappRoutes');
+// Route imports with error catching
+try {
+  const userRoutes = require('./routes/userRoutes');
+  app.use('/api/users', userRoutes);
+  console.log("✅ userRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading userRoutes:", err);
+}
 
-// Routes
-app.use('/api/users', userRoutes);
-app.use('/api/loans', loanRoutes);
-app.use('/api/trust', trustRoutes);
-app.use('/api/ledger', blockchainRoutes);
-app.use('/api/whatsapp', whatsappRoutes);
+try {
+  const loanRoutes = require('./routes/loanRoutes');
+  app.use('/api/loans', loanRoutes);
+  console.log("✅ loanRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading loanRoutes:", err);
+}
 
-// Root test route
+try {
+  const trustRoutes = require('./routes/trustRoutes');
+  app.use('/api/trust', trustRoutes);
+  console.log("✅ trustRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading trustRoutes:", err);
+}
+
+try {
+  const blockchainRoutes = require('./routes/blockchainRoutes');
+  app.use('/api/ledger', blockchainRoutes);
+  console.log("✅ blockchainRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading blockchainRoutes:", err);
+}
+
+try {
+  const whatsappRoutes = require('./routes/whatsappRoutes');
+  app.use('/api/whatsapp', whatsappRoutes);
+  console.log("✅ whatsappRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading whatsappRoutes:", err);
+}
+
+// Test root route
 app.get('/', (req, res) => {
   res.send('🚀 Loan Network Backend is running');
 });
 
-// Port setup
-const backendPort = process.env.PORT || 3000;
-app.listen(backendPort, () => {
-  console.log(`✅ Server running on http://localhost:${backendPort}`);
+// Port Setup
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
 });
