@@ -1,0 +1,2 @@
+# TechSolstice
+Hackathon project
