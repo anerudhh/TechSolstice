@@ -4,6 +4,11 @@ let otpStore = {}; // in-memory OTP store
 
 exports.registerUser = (req, res) => {
   const { name, email, password } = req.body;
+
+  if (!name || !email || !password) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
+
   console.log(`Registering user: ${name}, ${email}`);
   res.status(201).json({ msg: 'User registered successfully' });
 };
