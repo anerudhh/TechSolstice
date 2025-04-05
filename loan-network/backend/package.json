@@ -1,19 +1,21 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "Decentralized Emergency Loan Backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sachin Bhat",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
-    "mongoose": "^8.13.2",
-    "nodemon": "^3.1.9",
     "twilio": "^5.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
