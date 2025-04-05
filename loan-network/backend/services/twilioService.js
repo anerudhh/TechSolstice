@@ -23,13 +23,13 @@ async function sendSMS(to, body) {
 
 // Send OTP
 async function sendOTP(phone, otp) {
-    const message = templates.sendOTP(phone, otp);  // ✅ Use template
+    const message = templates.otpMessageTemplate("User", otp); // Correct function
     return await sendSMS(phone, message);
 }
 
 // Notify Lender about loan request
 async function notifyLender(phone, borrowerName, amount) {
-    const message = templates.loanRequestNotification(borrowerName, amount);  // ✅ Use template
+    const message = templates.loanRequestTemplate("Lender", borrowerName, amount); // Correct function
     return await sendSMS(phone, message);
 }
 
