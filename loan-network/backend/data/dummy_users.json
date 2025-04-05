@@ -1,0 +1,105 @@
+[
+    {
+      "id": 1,
+      "name": "Ravi Kumar",
+      "phone": "+919000000001",
+      "trustScore": 70
+    },
+    {
+      "id": 2,
+      "name": "Anita Singh",
+      "phone": "+919000000002",
+      "trustScore": 85
+    },
+    {
+      "id": 3,
+      "name": "Deepak Joshi",
+      "phone": "+919000000003",
+      "trustScore": 90
+    },
+    {
+      "id": 4,
+      "name": "Meena Patil",
+      "phone": "+919000000004",
+      "trustScore": 60
+    },
+    {
+      "id": 5,
+      "name": "Vikram Desai",
+      "phone": "+919000000005",
+      "trustScore": 75
+    },
+    {
+      "id": 6,
+      "name": "Sita Iyer",
+      "phone": "+919000000006",
+      "trustScore": 80
+    },
+    {
+      "id": 7,
+      "name": "Rahul Sharma",
+      "phone": "+919000000007",
+      "trustScore": 68
+    },
+    {
+      "id": 8,
+      "name": "Kavita Nair",
+      "phone": "+919000000008",
+      "trustScore": 77
+    },
+    {
+      "id": 9,
+      "name": "Mohit Bansal",
+      "phone": "+919000000009",
+      "trustScore": 50
+    },
+    {
+      "id": 10,
+      "name": "Priya Das",
+      "phone": "+919000000010",
+      "trustScore": 72
+    },
+    {
+      "id": 11,
+      "name": "Arjun Mehta",
+      "phone": "+919000000011",
+      "trustScore": 88
+    },
+    {
+      "id": 12,
+      "name": "Sunita Reddy",
+      "phone": "+919000000012",
+      "trustScore": 66
+    },
+    {
+      "id": 13,
+      "name": "Gopal Verma",
+      "phone": "+919000000013",
+      "trustScore": 59
+    },
+    {
+      "id": 14,
+      "name": "Neha Kapoor",
+      "phone": "+919000000014",
+      "trustScore": 83
+    },
+    {
+      "id": 15,
+      "name": "Ajay Thakur",
+      "phone": "+919000000015",
+      "trustScore": 74
+    },
+    {
+      "id": 16,
+      "name": "Lata Chauhan",
+      "phone": "+919000000016",
+      "trustScore": 79
+    },
+    {
+      "id": 17,
+      "name": "Farhan Qureshi",
+      "phone": "+919000000017",
+      "trustScore": 91
+    }
+  ]
+  
