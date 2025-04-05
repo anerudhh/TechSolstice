@@ -1,4 +1,4 @@
-const blockchain = require('../blockchain/blockchain.js');
+const blockchain = require('./blockchain/blockchain.js');
 
 // A simple in-memory database for storing user trust scores (in practice, use a real database)
 let userTrustScores = {};
