@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 });
 
 // Port Setup
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+const portno = process.env.PORT || 3000;
+app.listen(portno, () => {
+  console.log(`✅ Server running on http://localhost:${portno}`);
 });
