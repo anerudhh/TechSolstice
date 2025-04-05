@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Decentralized Emergency Loan Network</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Request a Loan</h2>
+            <form id="loanForm">
+                <input type="number" id="loanAmount" placeholder="Loan Amount" required />
+                <input type="text" id="loanReason" placeholder="Reason for Loan" required />
+                <button type="submit">Request Loan</button>
+            </form>
+            <p id="loanStatus"></p>
+        </section>
+        <section>
+            <h2>Your Trust Score</h2>
+            <p id="trustScore">Loading...</p>
+        </section>
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+</html>

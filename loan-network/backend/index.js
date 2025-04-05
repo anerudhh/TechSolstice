@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 console.log("✅ Middleware configured");
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'frontend/public')));
+
 // Route imports with error catching
 try {
   const loanRoutes = require('./routes/loanRoutes');
