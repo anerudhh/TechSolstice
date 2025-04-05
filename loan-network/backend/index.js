@@ -24,6 +24,38 @@ try {
   console.error("❌ Error loading loanRoutes:", err);
 }
 
+try {
+  const userRoutes = require('./routes/userRoutes');
+  app.use('/api/users', userRoutes);
+  console.log("✅ userRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading userRoutes:", err);
+}
+
+try {
+  const whatsappRoutes = require('./routes/whatsappRoutes');
+  app.use('/api/whatsapp', whatsappRoutes);
+  console.log("✅ whatsappRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading whatsappRoutes:", err);
+}
+
+try {
+  const blockchainRoutes = require('./routes/blockchainRoutes');
+  app.use('/api/ledger', blockchainRoutes);
+  console.log("✅ blockchainRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading blockchainRoutes:", err);
+}
+
+try {
+  const trustRoutes = require('./routes/trustRoutes');
+  app.use('/api/trust', trustRoutes);
+  console.log("✅ trustRoutes loaded");
+} catch (err) {
+  console.error("❌ Error loading trustRoutes:", err);
+}
+
 // Test root route
 app.get('/', (req, res) => {
   res.send('🚀 Loan Network Backend is running');
