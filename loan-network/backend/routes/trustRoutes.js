@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const trustScoreController = require('../controllers/trustScoreController.js');
+const {
+  getTrustScore,
+  updateTrustScore
+} = require('../controllers/trustController');
 
-// Route to update a user's trust score
-router.post('/update', trustScoreController.updateTrustScore);
+// @route   GET /api/trust/score/:userId
+router.get('/score/:userId', getTrustScore);
 
-// Route to get a user's trust score
-router.get('/:userId', trustScoreController.getTrustScore);
+// @route   POST /api/trust/score/:userId
+router.post('/score/:userId', updateTrustScore);
 
 module.exports = router;
