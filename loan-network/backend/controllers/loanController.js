@@ -1,4 +1,4 @@
-const { loadLoans, saveLoans } = require('./config/db');
+const { loadLoans, saveLoans } = require('../config/db'); // Corrected path
 
 exports.requestLoan = (req, res) => {
   const { userId, amount, reason } = req.body;
