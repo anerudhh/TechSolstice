@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   getTrustScore,
   updateTrustScore
-} = require('../controllers/trustController');
+} = require('./controllers/trustController');
 
 // @route   GET /api/trust/score/:userId
 router.get('/score/:userId', getTrustScore);
