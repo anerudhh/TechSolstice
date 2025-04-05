@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustLend - Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>TrustLend</h1>
+    <form id="login-form">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required placeholder="Enter your phone number" />
+      <button type="submit">Send OTP</button>
+    </form>
+
+    <form id="otp-form" style="display: none;">
+      <label for="otp">Enter OTP:</label>
+      <input type="text" id="otp" required placeholder="Enter OTP received" />
+      <button type="submit">Verify</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const otpForm = document.getElementById('otp-form');
+    const phoneInput = document.getElementById('phone');
+    const otpInput = document.getElementById('otp');
+    const status = document.getElementById('status');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = phoneInput.value;
+      const res = await fetch('/api/users/login-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone })
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        loginForm.style.display = 'none';
+        otpForm.style.display = 'block';
+        status.textContent = 'OTP sent successfully!';
+      } else {
+        status.textContent = data.message || 'Error sending OTP';
+      }
+    });
+
+    otpForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const otp = otpInput.value;
+      const phone = phoneInput.value;
+      const res = await fetch('/api/users/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone, otp })
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        localStorage.setItem('userId', data.userId);
+        window.location.href = '/dashboard.html';
+      } else {
+        status.textContent = data.message || 'Invalid OTP';
+      }
+    });
+  </script>
+</body>
+</html>
