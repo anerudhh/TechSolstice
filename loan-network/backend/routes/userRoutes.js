@@ -9,3 +9,4 @@ router.post('/register', registerUser);
 router.post('/login', loginWithOtp);
 
 module.exports = router;
+
