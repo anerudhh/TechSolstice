@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { requestLoan, getAllLoans } = require('../controllers/loanController');
+const loanController = require('../controllers/loanController');
+
+// Use the handlers from loanController
+const { requestLoan, getAllLoans } = loanController;
 
 // @route   POST /api/loans/request
 router.post('/request', requestLoan);
