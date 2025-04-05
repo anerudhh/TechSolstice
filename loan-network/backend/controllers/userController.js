@@ -3,15 +3,15 @@ const { loadUsers, saveUsers } = require('../config/db');
 let otpStore = {}; // in-memory OTP store
 
 exports.registerUser = (req, res) => {
-  const { name, phone } = req.body;
-  let users = loadUsers();
-  const exists = users.find(u => u.phone === phone);
-  if (exists) return res.status(400).json({ msg: 'User already exists' });
+  const { name, email, password } = req.body;
+  console.log(`Registering user: ${name}, ${email}`);
+  res.status(201).json({ msg: 'User registered successfully' });
+};
 
-  const newUser = { id: Date.now(), name, phone, trustScore: 50 };
-  users.push(newUser);
-  saveUsers(users);
-  res.status(201).json({ msg: 'Registered successfully', user: newUser });
+exports.loginUser = (req, res) => {
+  const { email, password } = req.body;
+  console.log(`Logging in user: ${email}`);
+  res.status(200).json({ msg: 'User logged in successfully' });
 };
 
 exports.sendOTP = (req, res) => {
