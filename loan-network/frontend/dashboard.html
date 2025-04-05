@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustLend Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to TrustLend</h1>
+      <p>Your Decentralized Emergency Loan Dashboard</p>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <h2>Trust Score</h2>
+        <p id="trustScore">Loading...</p>
+      </div>
+      <div class="card">
+        <h2>Loans</h2>
+        <p id="loanCount">Loading...</p>
+      </div>
+      <div class="card">
+        <h2>Badges</h2>
+        <ul id="badgeList">Loading...</ul>
+      </div>
+    </section>
+
+    <section class="ledger">
+      <h2>Transaction History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Timestamp</th>
+            <th>Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="ledgerBody">
+          <!-- Filled via JS -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    async function loadDashboard() {
+      try {
+        const trustRes = await fetch('/api/trust/score?userId=1');
+        const trustData = await trustRes.json();
+        document.getElementById('trustScore').textContent = trustData.score;
+
+        const loanRes = await fetch('/api/loans/user/1');
+        const loans = await loanRes.json();
+        document.getElementById('loanCount').textContent = loans.length;
+
+        const badgeList = document.getElementById('badgeList');
+        if (trustData.score >= 1000) {
+          badgeList.innerHTML = '<li>🌟 Trusted Lender</li><li>🎖️ Community Hero</li>';
+        } else {
+          badgeList.innerHTML = '<li>👤 New User</li>';
+        }
+
+        const ledgerRes = await fetch('/api/ledger');
+        const ledger = await ledgerRes.json();
+        const ledgerBody = document.getElementById('ledgerBody');
+        ledgerBody.innerHTML = ledger.map(block => `
+          <tr>
+            <td>${block.id}</td>
+            <td>${block.timestamp}</td>
+            <td>${block.data.type}</td>
+            <td>${block.data.fromUserId}</td>
+            <td>${block.data.toUserId}</td>
+            <td>${block.data.amount}</td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        console.error(err);
+        alert('Error loading dashboard');
+      }
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>
