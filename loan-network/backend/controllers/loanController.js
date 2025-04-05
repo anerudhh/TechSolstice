@@ -21,3 +21,11 @@ exports.getAllLoans = (req, res) => {
   const loans = loadLoans();
   res.json(loans);
 };
+
+exports.offerLoan = (req, res) => {
+  res.status(501).json({ msg: 'offerLoan not implemented' });
+};
+
+exports.repayLoan = (req, res) => {
+  res.status(501).json({ msg: 'repayLoan not implemented' });
+};
