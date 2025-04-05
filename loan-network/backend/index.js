@@ -17,7 +17,7 @@ console.log("✅ Middleware configured");
 
 // Route imports with error catching
 try {
-  const userRoutes = require('./routes/userRoutes');
+  const userRoutes = require('../routes/userRoutes');
   app.use('/api/users', userRoutes);
   console.log("✅ userRoutes loaded");
 } catch (err) {
@@ -25,7 +25,7 @@ try {
 }
 
 try {
-  const loanRoutes = require('./routes/loanRoutes');
+  const loanRoutes = require('../routes/loanRoutes');
   app.use('/api/loans', loanRoutes);
   console.log("✅ loanRoutes loaded");
 } catch (err) {
@@ -33,7 +33,7 @@ try {
 }
 
 try {
-  const trustRoutes = require('./routes/trustRoutes');
+  const trustRoutes = require('../routes/trustRoutes');
   app.use('/api/trust', trustRoutes);
   console.log("✅ trustRoutes loaded");
 } catch (err) {
@@ -41,7 +41,7 @@ try {
 }
 
 try {
-  const blockchainRoutes = require('./routes/blockchainRoutes');
+  const blockchainRoutes = require('../routes/blockchainRoutes');
   app.use('/api/ledger', blockchainRoutes);
   console.log("✅ blockchainRoutes loaded");
 } catch (err) {
@@ -49,7 +49,7 @@ try {
 }
 
 try {
-  const whatsappRoutes = require('./routes/whatsappRoutes');
+  const whatsappRoutes = require('../routes/whatsappRoutes');
   app.use('/api/whatsapp', whatsappRoutes);
   console.log("✅ whatsappRoutes loaded");
 } catch (err) {
