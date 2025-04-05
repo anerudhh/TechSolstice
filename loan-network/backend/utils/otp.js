@@ -9,6 +9,11 @@ function generateOTP(phoneNumber) {
   return otp;
 }
 
+// Store OTP with expiry
+function storeOTP(phoneNumber, otp) {
+  otps[phoneNumber] = { otp, expiry: Date.now() + 5 * 60 * 1000 }; // 5 minutes expiry
+}
+
 // Verify OTP
 function verifyOTP(phoneNumber, inputOtp) {
   const record = otps[phoneNumber];
@@ -27,4 +32,5 @@ function verifyOTP(phoneNumber, inputOtp) {
 module.exports = {
   generateOTP,
   verifyOTP,
+  storeOTP, // Export the new function
 };
