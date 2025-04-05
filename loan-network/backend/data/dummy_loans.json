@@ -1,0 +1,202 @@
+[
+    {
+      "id": 1,
+      "borrowerId": 1,
+      "lenderId": 3,
+      "amount": 2000,
+      "reason": "Medical bills",
+      "status": "approved",
+      "createdAt": 1712301000000,
+      "approvedAt": 1712301100000
+    },
+    {
+      "id": 2,
+      "borrowerId": 2,
+      "lenderId": null,
+      "amount": 1000,
+      "reason": "School fees",
+      "status": "pending",
+      "createdAt": 1712301200000
+    },
+    {
+      "id": 3,
+      "borrowerId": 1,
+      "lenderId": 4,
+      "amount": 500,
+      "reason": "Home repair",
+      "status": "repaid",
+      "createdAt": 1712301300000,
+      "approvedAt": 1712301400000,
+      "repaidAt": 1712301600000
+    },
+    {
+      "id": 4,
+      "borrowerId": 5,
+      "lenderId": null,
+      "amount": 750,
+      "reason": "Phone recharge",
+      "status": "pending",
+      "createdAt": 1712301700000
+    },
+    {
+      "id": 5,
+      "borrowerId": 6,
+      "lenderId": 2,
+      "amount": 1200,
+      "reason": "Electricity bill",
+      "status": "approved",
+      "createdAt": 1712301800000,
+      "approvedAt": 1712301900000
+    },
+    {
+      "id": 6,
+      "borrowerId": 7,
+      "lenderId": 1,
+      "amount": 300,
+      "reason": "Bus fare",
+      "status": "rejected",
+      "createdAt": 1712302000000,
+      "rejectedAt": 1712302100000
+    },
+    {
+      "id": 7,
+      "borrowerId": 3,
+      "lenderId": 5,
+      "amount": 1800,
+      "reason": "Emergency travel",
+      "status": "approved",
+      "createdAt": 1712302200000,
+      "approvedAt": 1712302300000
+    },
+    {
+      "id": 8,
+      "borrowerId": 2,
+      "lenderId": null,
+      "amount": 400,
+      "reason": "Groceries",
+      "status": "pending",
+      "createdAt": 1712302400000
+    },
+    {
+      "id": 9,
+      "borrowerId": 8,
+      "lenderId": 6,
+      "amount": 600,
+      "reason": "Tuition",
+      "status": "repaid",
+      "createdAt": 1712302500000,
+      "approvedAt": 1712302600000,
+      "repaidAt": 1712302700000
+    },
+    {
+      "id": 10,
+      "borrowerId": 9,
+      "lenderId": null,
+      "amount": 900,
+      "reason": "Pet care",
+      "status": "pending",
+      "createdAt": 1712302800000
+    },
+    {
+      "id": 11,
+      "borrowerId": 10,
+      "lenderId": 7,
+      "amount": 1500,
+      "reason": "Travel tickets",
+      "status": "approved",
+      "createdAt": 1712302900000,
+      "approvedAt": 1712303000000
+    },
+    {
+      "id": 12,
+      "borrowerId": 11,
+      "lenderId": 2,
+      "amount": 350,
+      "reason": "Gas cylinder",
+      "status": "repaid",
+      "createdAt": 1712303100000,
+      "approvedAt": 1712303200000,
+      "repaidAt": 1712303300000
+    },
+    {
+      "id": 13,
+      "borrowerId": 4,
+      "lenderId": 10,
+      "amount": 250,
+      "reason": "Snacks for kids",
+      "status": "rejected",
+      "createdAt": 1712303400000,
+      "rejectedAt": 1712303500000
+    },
+    {
+      "id": 14,
+      "borrowerId": 12,
+      "lenderId": 3,
+      "amount": 1800,
+      "reason": "Laptop repair",
+      "status": "approved",
+      "createdAt": 1712303600000,
+      "approvedAt": 1712303700000
+    },
+    {
+      "id": 15,
+      "borrowerId": 13,
+      "lenderId": null,
+      "amount": 200,
+      "reason": "Photocopies",
+      "status": "pending",
+      "createdAt": 1712303800000
+    },
+    {
+      "id": 16,
+      "borrowerId": 14,
+      "lenderId": 5,
+      "amount": 1000,
+      "reason": "Repair scooter",
+      "status": "approved",
+      "createdAt": 1712303900000,
+      "approvedAt": 1712304000000
+    },
+    {
+      "id": 17,
+      "borrowerId": 6,
+      "lenderId": 1,
+      "amount": 900,
+      "reason": "Buy books",
+      "status": "repaid",
+      "createdAt": 1712304100000,
+      "approvedAt": 1712304200000,
+      "repaidAt": 1712304300000
+    },
+    {
+      "id": 18,
+      "borrowerId": 15,
+      "lenderId": null,
+      "amount": 700,
+      "reason": "Clinic visit",
+      "status": "pending",
+      "createdAt": 1712304400000
+    },
+    {
+      "id": 19,
+      "borrowerId": 16,
+      "lenderId": 7,
+      "amount": 800,
+      "reason": "Online classes",
+      "status": "approved",
+      "createdAt": 1712304500000,
+      "approvedAt": 1712304600000
+    },
+    {
+      "id": 20,
+      "borrowerId": 17,
+      "lenderId": 2,
+      "amount": 1300,
+      "reason": "Bike maintenance",
+      "status": "repaid",
+      "createdAt": 1712304700000,
+      "approvedAt": 1712304800000,
+      "repaidAt": 1712304900000
+    }
+  ]
+  
