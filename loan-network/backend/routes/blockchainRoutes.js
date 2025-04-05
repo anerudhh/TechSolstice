@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   getLedger,
   addLedgerEntry
-} = require('../controllers/blockchainController');
+} = require('./controllers/blockchainController');
 
 // @route   GET /api/ledger
 router.get('/', getLedger);
