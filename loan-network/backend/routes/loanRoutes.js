@@ -5,7 +5,7 @@ const {
   offerLoan,
   getLoans,
   repayLoan
-} = require('./controllers/loanController');
+} = require('../controllers/loanController');
 
 // @route   POST /api/loans/request
 router.post('/request', requestLoan);
