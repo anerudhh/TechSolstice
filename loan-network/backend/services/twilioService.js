@@ -3,6 +3,8 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioPhone = process.env.TWILIO_PHONE_NUMBER;
 const client = require("twilio")(accountSid, authToken);
 
+const templates = require("../utils/whatsappTemplates");  // ✅ ADD THIS LINE
+
 // Utility to send SMS
 async function sendSMS(to, body) {
     try {
@@ -21,13 +23,13 @@ async function sendSMS(to, body) {
 
 // Send OTP
 async function sendOTP(phone, otp) {
-    const message = `Your OTP for login is ${otp}. Use this to access your Emergency Loan account.`;
+    const message = templates.sendOTP(phone, otp);  // ✅ Use template
     return await sendSMS(phone, message);
 }
 
 // Notify Lender about loan request
 async function notifyLender(phone, borrowerName, amount) {
-    const message = `${borrowerName} has requested a loan of ₹${amount}. Please check your dashboard.`;
+    const message = templates.loanRequestNotification(borrowerName, amount);  // ✅ Use template
     return await sendSMS(phone, message);
 }
 
