@@ -7,8 +7,13 @@ exports.requestLoan = (req, res) => {
 };
 
 exports.getAllLoans = (req, res) => {
-  console.log('Fetching all loans');
-  res.status(200).json({ loans: [] });
+  // Example loan data
+  const loans = [
+    { amount: 5000, reason: 'Medical emergency' },
+    { amount: 10000, reason: 'Education' },
+  ];
+
+  res.status(200).json({ loans });
 };
 
 exports.offerLoan = (req, res) => {
